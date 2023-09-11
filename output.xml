@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.10.6 on linux)" generated="20230911 12:16:25.441" rpa="false" schemaversion="4">
+<suite id="s1" name="Google-Search" source="/home/aadil/Documents/python/madgical-kids-new/google-search.robot">
+<test id="s1-t1" name="Open the URL and Take a Screenshot" line="22">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>http://madgical-kids-times.s3-website.ap-south-1.amazonaws.com/</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230911 12:16:25.704" level="INFO">Opening browser 'chrome' to base url 'http://madgical-kids-times.s3-website.ap-south-1.amazonaws.com/'.</msg>
+<status status="PASS" starttime="20230911 12:16:25.703" endtime="20230911 12:16:27.815"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230911 12:16:27.816" endtime="20230911 12:16:27.929"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>class=articles_card_block__KJy8k</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230911 12:16:27.929" endtime="20230911 12:16:28.421"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230911 12:16:28.981" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230911 12:16:28.421" endtime="20230911 12:16:28.981"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230911 12:16:28.981" endtime="20230911 12:16:29.054"/>
+</kw>
+<status status="PASS" starttime="20230911 12:16:25.701" endtime="20230911 12:16:29.055"/>
+</test>
+<test id="s1-t2" name="Category tests" line="33">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${website_url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230911 12:16:29.061" level="INFO">Opening browser 'chrome' to base url 'http://madgical-kids-times.s3-website.ap-south-1.amazonaws.com/'.</msg>
+<status status="PASS" starttime="20230911 12:16:29.059" endtime="20230911 12:16:31.187"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230911 12:16:31.187" endtime="20230911 12:16:31.300"/>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${actual_count}</var>
+<arg>${category_xpath}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20230911 12:16:31.333" level="INFO">${actual_count} = 5</msg>
+<status status="PASS" starttime="20230911 12:16:31.301" endtime="20230911 12:16:31.333"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${actual_count_as_int}</var>
+<arg>int(${actual_count})</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230911 12:16:31.335" level="INFO">${actual_count_as_int} = 5</msg>
+<status status="PASS" starttime="20230911 12:16:31.334" endtime="20230911 12:16:31.335"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Actual Count: ${actual_count_as_int}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230911 12:16:31.336" level="INFO">Actual Count: 5</msg>
+<status status="PASS" starttime="20230911 12:16:31.336" endtime="20230911 12:16:31.337"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Expected Count: ${expected_category_Count}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230911 12:16:31.337" level="INFO">Expected Count: 5</msg>
+<status status="PASS" starttime="20230911 12:16:31.337" endtime="20230911 12:16:31.337"/>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<arg>${actual_count_as_int}</arg>
+<arg>${expected_category_Count}</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<msg timestamp="20230911 12:16:31.338" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20230911 12:16:31.338" endtime="20230911 12:16:31.338"/>
+</kw>
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>@{elements}</var>
+<arg>xpath=//*[@id="root"]/div/div[2]</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20230911 12:16:31.362" level="INFO">@{elements} = [ &lt;selenium.webdriver.remote.webelement.WebElement (session="64df3b67037f7a80a79e945dd615c8bf", element="B09983B263F2F9ABA73AF1323DA50B4C_element_37")&gt; ]</msg>
+<status status="PASS" starttime="20230911 12:16:31.339" endtime="20230911 12:16:31.362"/>
+</kw>
+<for flavor="IN">
+<var>${element}</var>
+<value>@{elements}</value>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="64df3b67037f7a80a79e945dd615c8bf", element="B09983B263F2F9ABA73AF1323DA50B4C_element_37")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230911 12:16:31.400" level="INFO">${text} = GENERAL NEWS
+SCIENCE
+SPORT
+SPACE
+ENTERTAINMENT</msg>
+<status status="PASS" starttime="20230911 12:16:31.363" endtime="20230911 12:16:31.400"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Category Text: ${text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230911 12:16:31.401" level="INFO">Category Text: GENERAL NEWS
+SCIENCE
+SPORT
+SPACE
+ENTERTAINMENT</msg>
+<status status="PASS" starttime="20230911 12:16:31.401" endtime="20230911 12:16:31.401"/>
+</kw>
+<status status="PASS" starttime="20230911 12:16:31.363" endtime="20230911 12:16:31.401"/>
+</iter>
+<status status="PASS" starttime="20230911 12:16:31.362" endtime="20230911 12:16:31.402"/>
+</for>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230911 12:16:31.402" endtime="20230911 12:16:31.473"/>
+</kw>
+<status status="PASS" starttime="20230911 12:16:29.056" endtime="20230911 12:16:31.474"/>
+</test>
+<test id="s1-t3" name="Articles card Count" line="64">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${website_url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230911 12:16:31.477" level="INFO">Opening browser 'chrome' to base url 'http://madgical-kids-times.s3-website.ap-south-1.amazonaws.com/'.</msg>
+<status status="PASS" starttime="20230911 12:16:31.476" endtime="20230911 12:16:33.842"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230911 12:16:33.843" endtime="20230911 12:16:33.950"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>class=articles_card_block__KJy8k</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230911 12:16:33.950" endtime="20230911 12:16:34.222"/>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${actual_count}</var>
+<arg>${xpath_expression}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20230911 12:16:34.247" level="INFO">${actual_count} = 10</msg>
+<status status="PASS" starttime="20230911 12:16:34.222" endtime="20230911 12:16:34.247"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${actual_count_as_int}</var>
+<arg>int(${actual_count})</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230911 12:16:34.248" level="INFO">${actual_count_as_int} = 10</msg>
+<status status="PASS" starttime="20230911 12:16:34.247" endtime="20230911 12:16:34.248"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Actual Count: ${actual_count_as_int}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230911 12:16:34.249" level="INFO">Actual Count: 10</msg>
+<status status="PASS" starttime="20230911 12:16:34.249" endtime="20230911 12:16:34.249"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Expected Count: ${expected_count}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230911 12:16:34.250" level="INFO">Expected Count: 10</msg>
+<status status="PASS" starttime="20230911 12:16:34.250" endtime="20230911 12:16:34.250"/>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<arg>${actual_count_as_int}</arg>
+<arg>${expected_count}</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<msg timestamp="20230911 12:16:34.251" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20230911 12:16:34.251" endtime="20230911 12:16:34.251"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230911 12:16:34.252" endtime="20230911 12:16:34.320"/>
+</kw>
+<status status="PASS" starttime="20230911 12:16:31.475" endtime="20230911 12:16:34.321"/>
+</test>
+<test id="s1-t4" name="Open a Article" line="89">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>http://madgical-kids-times.s3-website.ap-south-1.amazonaws.com/</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230911 12:16:34.324" level="INFO">Opening browser 'chrome' to base url 'http://madgical-kids-times.s3-website.ap-south-1.amazonaws.com/'.</msg>
+<status status="PASS" starttime="20230911 12:16:34.323" endtime="20230911 12:16:45.215"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230911 12:16:45.215" endtime="20230911 12:16:45.321"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>class=articles_card_block__KJy8k</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230911 12:16:45.321" endtime="20230911 12:16:45.855"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//*[@id="root"]/div/div[3]/div[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230911 12:16:45.857" level="INFO">Clicking element 'xpath=//*[@id="root"]/div/div[3]/div[1]'.</msg>
+<status status="PASS" starttime="20230911 12:16:45.856" endtime="20230911 12:16:45.993"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230911 12:16:45.993" endtime="20230911 12:16:46.064"/>
+</kw>
+<status status="PASS" starttime="20230911 12:16:34.322" endtime="20230911 12:16:46.065"/>
+</test>
+<status status="PASS" starttime="20230911 12:16:25.443" endtime="20230911 12:16:46.068"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="4" fail="0" skip="0" id="s1" name="Google-Search">Google-Search</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20230911 12:16:25.699" level="WARN">Imported library 'PIL' contains no keywords.</msg>
+</errors>
+</robot>

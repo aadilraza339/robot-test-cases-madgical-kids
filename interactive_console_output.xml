@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.10.6 on linux)" generated="20230911 12:07:38.696" rpa="false" schemaversion="4">
+<suite id="s1" name="Robot Interactive Console" source="/home/aadil/.vscode/extensions/robocorp.robotframework-lsp-1.11.0/src/robotframework_ls/vendored/robotframework_interactive/robot_interactive_console.robot">
+<test id="s1-t1" name="Default Task/Test" line="5">
+<kw name="Interpreter Main Loop" library="MainLoop">
+<kw name="Open Browser">
+<arg>http://madgical-kids-times.s3-website.ap-south-1.amazonaws.com/</arg>
+<arg>chrome</arg>
+<msg timestamp="20230911 12:07:39.469" level="FAIL">No keyword with name 'Open Browser' found.</msg>
+<status status="FAIL" starttime="20230911 12:07:39.468" endtime="20230911 12:07:39.469"/>
+</kw>
+<kw name="Maximize Browser Window">
+<status status="NOT RUN" starttime="20230911 12:07:39.472" endtime="20230911 12:07:39.472"/>
+</kw>
+<kw name="Wait Until Element Is Visible">
+<arg>class=articles_card_block__KJy8k</arg>
+<status status="NOT RUN" starttime="20230911 12:07:39.475" endtime="20230911 12:07:39.475"/>
+</kw>
+<kw name="Click Element">
+<arg>xpath=//*[@id="root"]/div/div[3]/div[1]</arg>
+<status status="NOT RUN" starttime="20230911 12:07:39.478" endtime="20230911 12:07:39.479"/>
+</kw>
+<kw name="Execute JavaScript">
+<arg>window.scrollTo(0, document.body.scrollHeight)</arg>
+<status status="NOT RUN" starttime="20230911 12:07:39.482" endtime="20230911 12:07:39.483"/>
+</kw>
+<kw name="Wait Until Element Is Visible">
+<arg>class=footer_footer__2MZkk</arg>
+<status status="NOT RUN" starttime="20230911 12:07:39.486" endtime="20230911 12:07:39.486"/>
+</kw>
+<kw name="Capture Page Screenshot">
+<status status="NOT RUN" starttime="20230911 12:07:39.488" endtime="20230911 12:07:39.488"/>
+</kw>
+<kw name="Close Browser">
+<status status="NOT RUN" starttime="20230911 12:07:39.491" endtime="20230911 12:07:39.491"/>
+</kw>
+<status status="PASS" starttime="20230911 12:07:38.727" endtime="20230911 12:07:46.423"/>
+</kw>
+<status status="PASS" starttime="20230911 12:07:38.727" endtime="20230911 12:07:46.424"/>
+</test>
+<status status="PASS" starttime="20230911 12:07:38.697" endtime="20230911 12:07:46.425"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Robot Interactive Console">Robot Interactive Console</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
